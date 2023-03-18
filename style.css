@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --2px: 0.125rem;
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --10px: 0.625rem;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --24px: 1.5rem;
+  --30px: 1.875rem;
+  --main-color: #06a888;
+  --red-color: #f44336;
+  --edit-color: rgb(138, 138, 231);
+}
+
+body {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--10px);
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  color: #fff;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+} 
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--24px);
+}
+
+.column-title {
+  margin-bottom: var(--20px);
+  color: #fff;
+  font-size: var(--30px);
+  user-select: none;
+  text-align: center;
+}
+
+.task {
+  padding: var(--10px) var(--14px);
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.task .btns {
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  top: 50%;
+  right: var(--10px);
+  transform: translateY(-50%);
+}
+
+.task:hover .btns {
+  opacity: 1;
+}
+
+.input-area {
+  border: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.input-area:focus {
+  outline: none;
+}
+
+.dropzone {
+  height: var(--10px);
+  transition: background-color 0.15s, height 0.15s;
+}
+
+.dropzone.active {
+  height: var(--30px);
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.add-button {
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  padding: var(--10px) 0;
+  font-size: var(--16px);
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.small-btn {
+  background-color: #eee;
+  cursor: pointer;
+  border: none;
+  width: var(--24px);
+  height: var(--24px);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.edit:hover {
+  background-color: var(--edit-color);
+  color: #fff;
+}
+
+.remove:hover {
+  background-color: var(--red-color);
+  color: #fff;
+}
+
+@media (max-width: 37.5em) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.new1 {
+  border: 1px solid rgb(4, 119, 61);
+  width: 47%;
+  margin-top: 10%;
+  margin-bottom: 1%;
+}
+
+.footer {
+	color: #d8eae4;
+	text-align: center;
+  display: block;
+	margin-bottom: 2.4rem;
+	font-size: 15px;
+	position: static;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-1%);
+}
+
+.footer a:is(:link, :visited) {
+	color: #d8eae4;
+	font-weight: 100;
+	text-decoration: none;
+}
+
+.footer a:is(:hover, :active) {
+	color: #b1d5c9;
+	text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+  body {
+    padding: var(--8px);
+  }
+
+  h1 {
+    font-size: var(--30px);
+    margin-top: var(--20px);
+    margin-bottom: var(--16px);
+  }
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: var(--16px);
+  }
+
+  .column-title {
+    font-size: var(--20px);
+    margin-bottom: var(--10px);
+  }
+
+  .new1 {
+    width: 100%;
+    margin-top: var(--16px);
+    margin-bottom: var(--8px);
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    padding: var(--12px);
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: var(--24px);
+    margin-bottom: var(--20px);
+  }
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--20px);
+  }
+
+  .column-title {
+    font-size: var(--24px);
+    margin-bottom: var(--12px);
+  }
+
+  .new1 {
+    width: 100%;
+    margin-top: var(--16px);
+    margin-bottom: var(--12px);
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  body {
+    padding: var(--16px);
+  }
+
+  h1 {
+    margin-top: var(--30px);
+    
+  }
+
+  .container {
+    max-width: 80%;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--24px);
+  }
+
+  .column-title {
+    font-size: var(--30px);
+    margin-bottom: var(--20px);
+  }
+
+  .new1 {
+    width: 47%;
+    margin-top: var(--24px);
+    margin-bottom: var(--16px);
+  }
+}
+
